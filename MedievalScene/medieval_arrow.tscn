@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d23takxgyrofa"]
+
+[ext_resource type="Script" path="res://MedievalScene/medieval_arrow.gd" id="1_q0bkf"]
+[ext_resource type="Texture2D" uid="uid://c51tvxc3klk24" path="res://Assets/Characters/Basic Arrow.png" id="2_vl2qb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56cm3"]
+
+[node name="Arrow" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_q0bkf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8.065, 8.065)
+texture = ExtResource("2_vl2qb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(8.065, 8.065)
+shape = SubResource("RectangleShape2D_56cm3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

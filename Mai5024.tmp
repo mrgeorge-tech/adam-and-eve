@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://j6kbrdhbu28d"]
+
+[ext_resource type="PackedScene" uid="uid://cgmuhtho7oqy0" path="res://ParallaxBackground.tscn" id="1_podjy"]
+[ext_resource type="PackedScene" uid="uid://ywoxh8d1vbmr" path="res://Player.tscn" id="2_2qc64"]
+[ext_resource type="Script" path="res://enemy_spawner.gd" id="4_5occc"]
+[ext_resource type="PackedScene" uid="uid://btrilnlcs2o53" path="res://enemy.tscn" id="5_a72q5"]
+[ext_resource type="PackedScene" uid="uid://b3josayyltmy5" path="res://boss.tscn" id="6_e4jtm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn4te"]
+size = Vector2(3792.75, 108.5)
+
+[node name="MainGame" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_podjy")]
+
+[node name="Player" parent="." instance=ExtResource("2_2qc64")]
+position = Vector2(121, 54)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1852.63, 983)
+shape = SubResource("RectangleShape2D_bn4te")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(3239, 886)
+script = ExtResource("4_5occc")
+enemy_scene = ExtResource("5_a72q5")
+boss_scene = ExtResource("6_e4jtm")

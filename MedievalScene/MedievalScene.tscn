@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://j6kbrdhbu28d"]
+
+[ext_resource type="PackedScene" uid="uid://cgmuhtho7oqy0" path="res://MedievalScene/medieval_ParallaxBackground.tscn" id="1_vcidp"]
+[ext_resource type="PackedScene" uid="uid://ywoxh8d1vbmr" path="res://MedievalScene/medieval_Player.tscn" id="2_h1c8v"]
+[ext_resource type="Script" path="res://MedievalScene/medieval_enemy_spawner.gd" id="3_2vrd2"]
+[ext_resource type="PackedScene" uid="uid://btrilnlcs2o53" path="res://MedievalScene/medieval_enemy.tscn" id="4_5ngrk"]
+[ext_resource type="PackedScene" uid="uid://b3josayyltmy5" path="res://MedievalScene/medieval_boss.tscn" id="5_mw2qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn4te"]
+size = Vector2(3792.75, 108.5)
+
+[node name="MedievalScene" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_vcidp")]
+
+[node name="Player" parent="." instance=ExtResource("2_h1c8v")]
+position = Vector2(121, 54)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1852.63, 983)
+shape = SubResource("RectangleShape2D_bn4te")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(3239, 886)
+script = ExtResource("3_2vrd2")
+enemy_scene = ExtResource("4_5ngrk")
+boss_scene = ExtResource("5_mw2qi")

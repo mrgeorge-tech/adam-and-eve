@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://j6kbrdhbu28d"]
+
+[ext_resource type="PackedScene" uid="uid://cgmuhtho7oqy0" path="res://ParallaxBackground.tscn" id="1_podjy"]
+[ext_resource type="PackedScene" uid="uid://ywoxh8d1vbmr" path="res://Player.tscn" id="2_2qc64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn4te"]
+size = Vector2(3792.75, 108.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_podjy")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_2qc64")]
+position = Vector2(118, 159)
+speed = 200.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1852.63, 983)
+shape = SubResource("RectangleShape2D_bn4te")

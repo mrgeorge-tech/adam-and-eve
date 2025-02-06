@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6m5u6gc5l5jh"]
+
+[ext_resource type="PackedScene" uid="uid://48uj7rrqgams" path="res://SamuraiScene/samurai_ParallaxBackground.tscn" id="1_7ludd"]
+[ext_resource type="PackedScene" uid="uid://kucnu00r1yrw" path="res://SamuraiScene/samurai_Player.tscn" id="2_xvp4f"]
+[ext_resource type="Script" path="res://SamuraiScene/samurai_enemy_spawner.gd" id="3_y7dae"]
+[ext_resource type="PackedScene" uid="uid://ct0j5eoiph7d6" path="res://SamuraiScene/samurai_enemy.tscn" id="4_sx2l5"]
+[ext_resource type="PackedScene" uid="uid://cgut00rwk7e3s" path="res://SamuraiScene/samurai_boss.tscn" id="5_jl0vi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn4te"]
+size = Vector2(3792.75, 108.5)
+
+[node name="MedievalScene" type="Node2D"]
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource("1_7ludd")]
+
+[node name="Player2" parent="." instance=ExtResource("2_xvp4f")]
+position = Vector2(47, 31)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1852.63, 983)
+shape = SubResource("RectangleShape2D_bn4te")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(3239, 886)
+script = ExtResource("3_y7dae")
+enemy_scene = ExtResource("4_sx2l5")
+boss_scene = ExtResource("5_jl0vi")

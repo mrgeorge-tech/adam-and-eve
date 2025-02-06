@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgmuhtho7oqy0"]
+
+[ext_resource type="Script" path="res://MedievalScene/medieval_parallax_background.gd" id="1_ufit4"]
+[ext_resource type="Texture2D" uid="uid://mndoxpvfekb6" path="res://Assets/Backgrounds/parallax-medival/far-01.png" id="2_oojsa"]
+[ext_resource type="Texture2D" uid="uid://delfo5eu7e7bu" path="res://Assets/Backgrounds/parallax-medival/middle-01.png" id="3_q2kno"]
+[ext_resource type="Texture2D" uid="uid://0hhxad2638m2" path="res://Assets/Backgrounds/parallax-medival/floor-01.png" id="4_owpef"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_ufit4")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(1089, 326)
+scale = Vector2(1.885, 1.885)
+motion_scale = Vector2(0.2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 3
+position = Vector2(353.751, 118.273)
+scale = Vector2(2.56, 2.56)
+texture = ExtResource("2_oojsa")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(1089, 326)
+scale = Vector2(1.885, 1.885)
+motion_scale = Vector2(0.5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture_repeat = 3
+position = Vector2(353.751, 118.273)
+scale = Vector2(2.56, 2.56)
+texture = ExtResource("3_q2kno")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(1089, 326)
+scale = Vector2(1.885, 1.885)
+motion_scale = Vector2(0.8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture_repeat = 3
+position = Vector2(353.751, 118.273)
+scale = Vector2(2.56, 2.56)
+texture = ExtResource("4_owpef")
