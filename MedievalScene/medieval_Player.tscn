@@ -185,7 +185,7 @@ animations = [{
 size = Vector2(29.1111, 33.6889)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(53, 142)
+position = Vector2(53, -26)
 scale = Vector2(30, 30)
 collision_mask = 2
 script = ExtResource("1_fc2dt")
@@ -203,7 +203,7 @@ scale = Vector2(0.375, 0.375)
 shape = SubResource("RectangleShape2D_gjl45")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(18.1333, 13.2667)
+position = Vector2(18.1333, 19.1334)
 zoom = Vector2(1.025, 1.025)
 limit_left = 0
 limit_smoothed = true

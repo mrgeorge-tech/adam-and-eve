@@ -1,7 +1,7 @@
 extends ParallaxBackground
 
 @export var scroll_speed: float = 100.0  # Base speed
-@onready var player = get_node("../medieval_Player")  # Reference the player
+@onready var player = get_node("../MedievalScene/Player")  # Reference the player
 
 func _process(delta):
 	if player:  # Make sure player exists
