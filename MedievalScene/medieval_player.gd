@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var arrow_scene: PackedScene  # Reference to the Arrow.tscn
 @onready var anim = $AnimatedSprite2D
 @onready var collision_shape = $CollisionShape2D
-@export var health: int = 100  # Player starts with 100 HP
+@export var health: int = 10  # Player starts with 100 HP
 
 var is_attacking = false  # Prevent movement while attacking
 var arrow_spawn_frame = 5  # Frame at which the arrow will spawn
@@ -18,7 +18,7 @@ func die():
 	print("Player died!")  # Debugging
 	set_physics_process(false)  # Stop player movement
 	await anim.animation_finished
-	queue_free()  # Remove the player (game over)
+	get_tree().call_deferred("change_scene_to_file", "res://MedievalScene/main_menu.tscn")
 
 
 func _physics_process(_delta):
